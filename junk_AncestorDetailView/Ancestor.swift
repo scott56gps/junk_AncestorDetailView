@@ -7,5 +7,5 @@
 
 struct Ancestor {
     var name: String
-    var ordinancesCompleted: String
+    var ordinancesCompleted: Ordinance
 }
