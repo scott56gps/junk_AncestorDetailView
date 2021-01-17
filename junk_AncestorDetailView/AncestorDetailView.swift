@@ -17,11 +17,19 @@ struct AncestorDetailView: View {
             HStack(spacing: 0) {
                 ForEach(Ordinance.allCases, id: \.self) { ordinance in
                     if (ordinance == .confirmation || ordinance == .initiatory || ordinance == .endowment || ordinance == .sealingToSpouse) {
-                        Text(ordinance.rawValue)
-                            .frame(width: 25)
-                            .background(Rectangle()
-                                            .strokeBorder(Color.blue, lineWidth: 1)
-                                            .frame(width: 25, height: 25, alignment: .center))
+                        if ancestor.ordinancesCompleted.contains(ordinance) {
+                            Text(ordinance.rawValue)
+                                .frame(width: 25)
+                                .background(Rectangle()
+                                                .fill(Color.blue)
+                                                .frame(width: 25, height: 25, alignment: .center))
+                        } else {
+                            Text(ordinance.rawValue)
+                                .frame(width: 25)
+                                .background(Rectangle()
+                                                .strokeBorder(Color.blue, lineWidth: 1)
+                                                .frame(width: 25, height: 25, alignment: .center))
+                        }
                     } else {
                         Text(ordinance.rawValue)
                             .frame(width: 25)
