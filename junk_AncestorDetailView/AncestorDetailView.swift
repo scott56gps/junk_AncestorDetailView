@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/**
+ Displays an Ancestor's details, such as name and completed ordinances.
+ 
+ ancestor: Ancestor - An ancestor for whom to display details
+ */
 struct AncestorDetailView: View {
     var ancestor: Ancestor
     

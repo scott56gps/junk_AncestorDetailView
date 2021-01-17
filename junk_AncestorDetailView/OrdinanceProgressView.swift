@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/**
+ Displays a progress bar of an ancestor's completed ordinances.
+ 
+ ordinancesCompleted: [Ordiance] - A collection of completed ordiances.
+ */
 struct OrdinanceProgressView: View {
     var ordinancesCompleted: [Ordinance]
     
