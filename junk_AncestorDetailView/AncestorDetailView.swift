@@ -11,8 +11,22 @@ struct AncestorDetailView: View {
     var ancestor: Ancestor
     
     var body: some View {
-        Text(ancestor.name)
-            .padding()
+        VStack {
+            Text(ancestor.name)
+                .padding()
+            HStack(spacing: 0) {
+                ForEach(Ordinance.allCases, id: \.self) { ordinance in
+                    Text(ordinance.rawValue)
+                        .frame(width: 25)
+                        .background(Rectangle()
+                                        .strokeBorder(Color.blue, lineWidth: 1))
+//                                        .border(Color.blue))
+                }
+            }
+                .background(Capsule()
+                            .strokeBorder(Color.blue, lineWidth: 1)
+                            .frame(width: 150, height: 25, alignment: .center))
+        }
     }
 }
 

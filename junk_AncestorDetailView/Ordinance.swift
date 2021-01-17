@@ -5,7 +5,7 @@
 //  Created by Scott Nicholes on 1/17/21.
 //
 
-enum Ordinance: String {
+enum Ordinance: String, CaseIterable {
     case baptism = "B"
     case confirmation = "C"
     case initiatory = "I"

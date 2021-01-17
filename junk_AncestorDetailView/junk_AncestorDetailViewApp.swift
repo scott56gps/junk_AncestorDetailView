@@ -11,7 +11,7 @@ import SwiftUI
 struct junk_AncestorDetailViewApp: App {
     var body: some Scene {
         WindowGroup {
-            AncestorDetailView()
+            AncestorDetailView(ancestor: Ancestor(name: "Evangelina De Luna", ordinancesCompleted: [.baptism, .confirmation]))
         }
     }
 }
