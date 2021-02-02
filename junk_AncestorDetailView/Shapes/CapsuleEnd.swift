@@ -21,9 +21,16 @@ struct CapsuleEnd: Shape {
 
 struct CapsuleEnd_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleEnd()
-            .fill(Color.blue)
-            .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 2))
-            .frame(width: 100, height: 100, alignment: .center)
+        HStack {
+            CapsuleEnd()
+                .fill(Color.blue)
+                .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 2))
+                .frame(width: 100, height: 100, alignment: .center)
+            CapsuleEnd()
+                .rotation(.degrees(180))
+                .fill(Color.blue)
+                .overlay(CapsuleEnd().rotation(.degrees(180)).stroke(Color.black, lineWidth: 2))
+                .frame(width: 100, height: 100, alignment: .center)
+        }
     }
 }
