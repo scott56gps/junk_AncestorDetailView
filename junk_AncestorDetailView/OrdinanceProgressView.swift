@@ -16,15 +16,16 @@ struct OrdinanceProgressView: View {
     var ordinancesCompleted: [Ordinance]
     
     var body: some View {
-        HStack() {
-                CapsuleEnd()
-                    .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 1))
-                    .frame(width: 50, height: 50, alignment: .center)
-            }
-//            .background(Capsule()
-//                            .strokeBorder(Color.blue, lineWidth: 1)
-//                            .frame(width: 150, height: 25, alignment: .center))
-        }
+        WindowedCapsule(numWindows: 4)
+//        HStack() {
+//                CapsuleEnd()
+//                    .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 1))
+//                    .frame(width: 50, height: 50, alignment: .center)
+//            }
+////            .background(Capsule()
+////                            .strokeBorder(Color.blue, lineWidth: 1)
+////                            .frame(width: 150, height: 25, alignment: .center))
+//        }
     }
     
     func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
@@ -49,6 +50,7 @@ struct OrdinanceProgressView: View {
             .fill(Color.blue)
             .frame(width: 40, height: 25, alignment: .center)
     }
+}
 
 struct OrdinanceProgressView_Previews: PreviewProvider {
     static var previews: some View {

@@ -17,7 +17,7 @@ struct WindowedCapsule: View {
                 .foregroundColor(.clear)
                 .frame(width: 50, height: 50, alignment: .center)
             
-            ForEach(0...numWindows, id: \.self) {_ in
+            ForEach(0..<numWindows, id: \.self) {_ in
                 Rectangle()
                     .strokeBorder(Color.blue, lineWidth: 2)
                     .frame(width: 50, height: 50, alignment: .center)
@@ -34,6 +34,6 @@ struct WindowedCapsule: View {
 
 struct WindowedCapsule_Previews: PreviewProvider {
     static var previews: some View {
-        WindowedCapsule(numWindows: 3)
+        WindowedCapsule(numWindows: 0)
     }
 }
