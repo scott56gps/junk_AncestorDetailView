@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1338474C25C947A00051FED9 /* CapsuleEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338474B25C947A00051FED9 /* CapsuleEnd.swift */; };
 		1EB194AE25B423D500A67C5F /* junk_AncestorDetailViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB194AD25B423D500A67C5F /* junk_AncestorDetailViewApp.swift */; };
 		1EB194B025B423D500A67C5F /* AncestorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB194AF25B423D500A67C5F /* AncestorDetailView.swift */; };
 		1EB194B225B423D600A67C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB194B125B423D600A67C5F /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1338474B25C947A00051FED9 /* CapsuleEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEnd.swift; sourceTree = "<group>"; };
 		1EB194AA25B423D500A67C5F /* junk_AncestorDetailView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = junk_AncestorDetailView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB194AD25B423D500A67C5F /* junk_AncestorDetailViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = junk_AncestorDetailViewApp.swift; sourceTree = "<group>"; };
 		1EB194AF25B423D500A67C5F /* AncestorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorDetailView.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1338474A25C9478A0051FED9 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				1338474B25C947A00051FED9 /* CapsuleEnd.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		1EB194A125B423D500A67C5F = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		1EB194AC25B423D500A67C5F /* junk_AncestorDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				1338474A25C9478A0051FED9 /* Shapes */,
 				1EB194CA25B44E8800A67C5F /* ViewExtensions.swift */,
 				1EB194BD25B4254D00A67C5F /* Ancestor.swift */,
 				1EB194C125B426A300A67C5F /* Ordinance.swift */,
@@ -150,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1338474C25C947A00051FED9 /* CapsuleEnd.swift in Sources */,
 				1EB194B025B423D500A67C5F /* AncestorDetailView.swift in Sources */,
 				1EB194C825B44BF600A67C5F /* OrdinanceProgressView.swift in Sources */,
 				1EB194C225B426A300A67C5F /* Ordinance.swift in Sources */,

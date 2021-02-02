@@ -21,15 +21,26 @@ struct OrdinanceProgressView: View {
                 if (ordinance == .confirmation || ordinance == .initiatory || ordinance == .endowment || ordinance == .sealingToSpouse) {
                     createOrdinanceTile(ordinance)
                         .if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) }
+                } else if (ordinance == .baptism) {
+                    createOrdinanceTile(ordinance)
+                        .if(ordinancesCompleted.contains(ordinance)) {
+                            $0.background(createFilledCapsule()) } else: {
+                            $0.background(createEmptyTile())
+                        }
                 } else {
                     Text(ordinance.rawValue)
                         .frame(width: 25)
                 }
+//                createOrdinanceTile(ordinance)
+//                    .if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) }
+//                createOrdinanceTile(ordinance)
+//                    .if(ordinancesCompleted.contains(.baptism) || ordinancesCompleted.contains(.sealingToParents)) { $0.background(createFilledCapsule()) } else: { $0.if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) } }
+                    }
             }
-        }
             .background(Capsule()
                             .strokeBorder(Color.blue, lineWidth: 1)
                             .frame(width: 150, height: 25, alignment: .center))
+        }
     }
     
     func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
@@ -48,7 +59,12 @@ struct OrdinanceProgressView: View {
             .strokeBorder(Color.blue, lineWidth: 1)
             .frame(width: 25, height: 25, alignment: .center)
     }
-}
+    
+    func createFilledCapsule() -> some View {
+        return Capsule()
+            .fill(Color.blue)
+            .frame(width: 40, height: 25, alignment: .center)
+    }
 
 struct OrdinanceProgressView_Previews: PreviewProvider {
     static var previews: some View {
