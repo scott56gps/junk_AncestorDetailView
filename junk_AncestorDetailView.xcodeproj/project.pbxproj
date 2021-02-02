@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1338474C25C947A00051FED9 /* CapsuleEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338474B25C947A00051FED9 /* CapsuleEnd.swift */; };
+		1338474F25C95F300051FED9 /* WindowedCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338474E25C95F300051FED9 /* WindowedCapsule.swift */; };
 		1EB194AE25B423D500A67C5F /* junk_AncestorDetailViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB194AD25B423D500A67C5F /* junk_AncestorDetailViewApp.swift */; };
 		1EB194B025B423D500A67C5F /* AncestorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB194AF25B423D500A67C5F /* AncestorDetailView.swift */; };
 		1EB194B225B423D600A67C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB194B125B423D600A67C5F /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1338474B25C947A00051FED9 /* CapsuleEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEnd.swift; sourceTree = "<group>"; };
+		1338474E25C95F300051FED9 /* WindowedCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowedCapsule.swift; sourceTree = "<group>"; };
 		1EB194AA25B423D500A67C5F /* junk_AncestorDetailView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = junk_AncestorDetailView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB194AD25B423D500A67C5F /* junk_AncestorDetailViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = junk_AncestorDetailViewApp.swift; sourceTree = "<group>"; };
 		1EB194AF25B423D500A67C5F /* AncestorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorDetailView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				1338474B25C947A00051FED9 /* CapsuleEnd.swift */,
+				1338474E25C95F300051FED9 /* WindowedCapsule.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				1EB194C225B426A300A67C5F /* Ordinance.swift in Sources */,
 				1EB194AE25B423D500A67C5F /* junk_AncestorDetailViewApp.swift in Sources */,
 				1EB194CB25B44E8800A67C5F /* ViewExtensions.swift in Sources */,
+				1338474F25C95F300051FED9 /* WindowedCapsule.swift in Sources */,
 				1EB194BE25B4254E00A67C5F /* Ancestor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

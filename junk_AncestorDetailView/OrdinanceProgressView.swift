@@ -16,30 +16,14 @@ struct OrdinanceProgressView: View {
     var ordinancesCompleted: [Ordinance]
     
     var body: some View {
-        HStack(spacing: 0) {
-            ForEach(Ordinance.allCases, id: \.self) { ordinance in
-                if (ordinance == .confirmation || ordinance == .initiatory || ordinance == .endowment || ordinance == .sealingToSpouse) {
-                    createOrdinanceTile(ordinance)
-                        .if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) }
-                } else if (ordinance == .baptism) {
-                    createOrdinanceTile(ordinance)
-                        .if(ordinancesCompleted.contains(ordinance)) {
-                            $0.background(createFilledCapsule()) } else: {
-                            $0.background(createEmptyTile())
-                        }
-                } else {
-                    Text(ordinance.rawValue)
-                        .frame(width: 25)
-                }
-//                createOrdinanceTile(ordinance)
-//                    .if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) }
-//                createOrdinanceTile(ordinance)
-//                    .if(ordinancesCompleted.contains(.baptism) || ordinancesCompleted.contains(.sealingToParents)) { $0.background(createFilledCapsule()) } else: { $0.if(ordinancesCompleted.contains(ordinance)) { $0.background(createFilledTile()) } else: { $0.background(createEmptyTile()) } }
-                    }
+        HStack() {
+                CapsuleEnd()
+                    .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 1))
+                    .frame(width: 50, height: 50, alignment: .center)
             }
-            .background(Capsule()
-                            .strokeBorder(Color.blue, lineWidth: 1)
-                            .frame(width: 150, height: 25, alignment: .center))
+//            .background(Capsule()
+//                            .strokeBorder(Color.blue, lineWidth: 1)
+//                            .frame(width: 150, height: 25, alignment: .center))
         }
     }
     
