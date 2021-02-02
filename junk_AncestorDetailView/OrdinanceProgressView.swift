@@ -16,21 +16,34 @@ struct OrdinanceProgressView: View {
     var ordinancesCompleted: [Ordinance]
     
     var body: some View {
-        WindowedCapsule(numWindows: 4)
-//        HStack() {
-//                CapsuleEnd()
-//                    .overlay(CapsuleEnd().stroke(Color.black, lineWidth: 1))
-//                    .frame(width: 50, height: 50, alignment: .center)
-//            }
-////            .background(Capsule()
-////                            .strokeBorder(Color.blue, lineWidth: 1)
-////                            .frame(width: 150, height: 25, alignment: .center))
-//        }
+        HStack(spacing: 0) {
+            ForEach(Ordinance.allCases, id: \.self) {ordinance in
+                createOrdinanceTile(ordinance)
+            }
+        }
     }
     
+    @ViewBuilder
     func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
-        return Text(ordinance.rawValue)
-            .frame(width: 25)
+        if (ordinance == .baptism) {
+            CapsuleEnd()
+                .foregroundColor(.clear)
+                .frame(width: 50, height: 50, alignment: .center)
+                .overlay(CapsuleEnd().stroke(Color.blue, lineWidth: 2)
+                            .overlay(Text(ordinance.rawValue)))
+        } else if (ordinance == .sealingToSpouse) {
+            CapsuleEnd()
+                .rotation(.degrees(180))
+                .foregroundColor(.clear)
+                .frame(width: 50, height: 50, alignment: .center)
+                .overlay(CapsuleEnd().rotation(.degrees(180)).stroke(Color.blue, lineWidth: 2)
+                            .overlay(Text(ordinance.rawValue)))
+        } else {
+            Rectangle()
+                .strokeBorder(Color.blue, lineWidth: 2)
+                .frame(width: 50, height: 50, alignment: .center)
+                .overlay(Text(ordinance.rawValue))
+        }
     }
     
     func createFilledTile() -> some View {

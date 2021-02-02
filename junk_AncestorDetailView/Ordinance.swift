@@ -10,6 +10,6 @@ enum Ordinance: String, CaseIterable {
     case confirmation = "C"
     case initiatory = "I"
     case endowment = "E"
-    case sealingToSpouse = "SS"
     case sealingToParents = "SP"
+    case sealingToSpouse = "SS"
 }
