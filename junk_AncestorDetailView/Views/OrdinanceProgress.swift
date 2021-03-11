@@ -23,7 +23,7 @@ struct OrdinanceProgress: View {
             ForEach(Ordinance.allCases, id: \.self) { ordinance in
                 tileForOrdinance(ordinance)
                     .overlay(Text(ordinance.rawValue)
-                        .foregroundColor(textColor))
+                                .foregroundColor(textColor))
                     .frame(width: 50, height: 50, alignment: .center)
             }
         }
@@ -49,9 +49,9 @@ struct OrdinanceProgress: View {
                                                         { $0.strokeBorder(borderColor, lineWidth: 2) }))
             
         default: AnyView(Rectangle()
-            .ifElse(ordinancesCompleted.contains(ordinance), if:
-                        { $0.fill(fillColor) }, else:
-                            { $0.strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: borderColor) }))
+                            .ifElse(ordinancesCompleted.contains(ordinance), if:
+                                        { $0.fill(fillColor) }, else:
+                                            { $0.strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: borderColor) }))
         }
     }
 }

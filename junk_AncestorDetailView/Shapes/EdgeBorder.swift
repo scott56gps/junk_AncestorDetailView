@@ -64,6 +64,5 @@ struct EdgeBorder_Previews: PreviewProvider {
     static var previews: some View {
         EdgeBorder(width: 2, edges: [.leading])
             .foregroundColor(.red)
-
     }
 }

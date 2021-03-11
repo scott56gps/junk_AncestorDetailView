@@ -22,7 +22,7 @@ struct WindowedCapsule: View {
                     .strokeBorder(Color.blue, lineWidth: 2)
                     .frame(width: 50, height: 50, alignment: .center)
             }
-                
+            
             CapsuleEnd()
                 .rotation(.degrees(180))
                 .overlay(CapsuleEnd().rotation(.degrees(180)).stroke(Color.blue, lineWidth: 2))

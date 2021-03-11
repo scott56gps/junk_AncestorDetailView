@@ -14,9 +14,6 @@ struct OrdinanceSelector: View {
         HStack {
             ForEach(Ordinance.allCases, id: \.self) { ordinance in
                 Text(ordinance.rawValue)
-//                Button("Select") {
-//                    print("\(ordinance.rawValue) selected")
-//                }
             }
         }
     }
