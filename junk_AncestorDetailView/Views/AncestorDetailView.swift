@@ -26,6 +26,6 @@ struct AncestorDetailView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AncestorDetailView(ancestor: Ancestor(name: "Evangelina De Luna", ordinancesCompleted: [.baptism, .confirmation]))
+        AncestorDetailView(ancestor: Ancestor(name: "Evangelina De Luna", gender: .female, ordinancesCompleted: [.baptism, .confirmation]))
     }
 }
