@@ -7,5 +7,8 @@
 
 struct Ancestor {
     var name: String
+    var gender: Gender
+    var birthDate: String?
+    var deathDate: String?
     var ordinancesCompleted: [Ordinance]
 }
