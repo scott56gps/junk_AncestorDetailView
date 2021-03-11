@@ -14,6 +14,9 @@ import SwiftUI
  */
 struct OrdinanceProgress: View {
     var ordinancesCompleted: [Ordinance]
+    var borderColor: Color = .blue
+    var textColor: Color = .black
+    var fillColor: Color = .blue
     
     var body: some View {
         HStack(spacing: 0) {
@@ -27,21 +30,24 @@ struct OrdinanceProgress: View {
     func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
         switch ordinance {
         case .baptism: CapsuleEnd()
-            .strokeBorder(Color.blue, lineWidth: 2)
+            .strokeBorder(borderColor, lineWidth: 2)
             .frame(width: 50, height: 50, alignment: .center)
-            .overlay(Text(ordinance.rawValue))
+            .overlay(Text(ordinance.rawValue)
+                .foregroundColor(textColor))
         case .confirmation: Rectangle()
-            .strokeBorder(width: 2, edges: [.top, .bottom], color: .blue)
-            .overlay(Text(ordinance.rawValue))
+            .strokeBorder(width: 2, edges: [.top, .bottom], color: borderColor)
+            .overlay(Text(ordinance.rawValue)
+                .foregroundColor(textColor))
             .frame(width: 50, height: 50, alignment: .center)
         case .sealingToSpouse: CapsuleEnd()
             .rotation(.degrees(180))
-            .strokeBorder(Color.blue, lineWidth: 2)
-            .overlay(Text(ordinance.rawValue))
+            .strokeBorder(borderColor, lineWidth: 2)
+            .overlay(Text(ordinance.rawValue)
+                .foregroundColor(textColor))
             .frame(width: 50, height: 50, alignment: .center)
         default: Rectangle()
-            .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: .blue)
-            .overlay(Text(ordinance.rawValue))
+            .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: borderColor)
+            .overlay(Text(ordinance.rawValue).foregroundColor(textColor))
             .frame(width: 50, height: 50, alignment: .center)
         }
     }
