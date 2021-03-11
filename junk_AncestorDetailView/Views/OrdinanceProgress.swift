@@ -41,6 +41,8 @@ struct OrdinanceProgress: View {
         } else {
             Rectangle()
 //                .strokeBorder(Color.blue, lineWidth: 2)
+                .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: .blue)
+                .foregroundColor(.clear)
                 .frame(width: 50, height: 50, alignment: .center)
                 .overlay(Text(ordinance.rawValue))
         }

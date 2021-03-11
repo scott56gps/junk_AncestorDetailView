@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13229E7C25FA041B004FD24E /* ShapeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13229E7B25FA041B004FD24E /* ShapeExtensions.swift */; };
 		1338474C25C947A00051FED9 /* CapsuleEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338474B25C947A00051FED9 /* CapsuleEnd.swift */; };
 		1338474F25C95F300051FED9 /* WindowedCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338474E25C95F300051FED9 /* WindowedCapsule.swift */; };
 		1362794625F9D2C800015DDA /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1362794525F9D2C800015DDA /* Gender.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13229E7B25FA041B004FD24E /* ShapeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtensions.swift; sourceTree = "<group>"; };
 		1338474B25C947A00051FED9 /* CapsuleEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEnd.swift; sourceTree = "<group>"; };
 		1338474E25C95F300051FED9 /* WindowedCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowedCapsule.swift; sourceTree = "<group>"; };
 		1362794525F9D2C800015DDA /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				1338474B25C947A00051FED9 /* CapsuleEnd.swift */,
 				1338474E25C95F300051FED9 /* WindowedCapsule.swift */,
 				1367DE3D25F9EE7100E22A96 /* EdgeBorder.swift */,
+				13229E7B25FA041B004FD24E /* ShapeExtensions.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				1367DE3E25F9EE7100E22A96 /* EdgeBorder.swift in Sources */,
 				1EB194C825B44BF600A67C5F /* OrdinanceProgress.swift in Sources */,
 				1EB194C225B426A300A67C5F /* Ordinance.swift in Sources */,
+				13229E7C25FA041B004FD24E /* ShapeExtensions.swift in Sources */,
 				1EB194AE25B423D500A67C5F /* junk_AncestorDetailViewApp.swift in Sources */,
 				1EB194CB25B44E8800A67C5F /* ViewExtensions.swift in Sources */,
 				13C61C7725F9DFD800412D0A /* OrdinanceSelector.swift in Sources */,

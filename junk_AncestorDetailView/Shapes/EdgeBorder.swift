@@ -6,9 +6,10 @@
 //
 import SwiftUI
 
-struct EdgeBorder: Shape {
+struct EdgeBorder: Shape, InsettableShape {
     var width: CGFloat
     var edges: [Edge]
+    var insetAmount: CGFloat = 0
     
     func path(in rect: CGRect) -> Path {
         Path { path in
@@ -50,5 +51,11 @@ struct EdgeBorder: Shape {
                 path.addPath(tempPath)
             }
         }
+    }
+    
+    func inset(by amount: CGFloat) -> some InsettableShape {
+        var border = self
+        border.insetAmount += amount
+        return border
     }
 }
