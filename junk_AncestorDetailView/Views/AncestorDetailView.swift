@@ -19,7 +19,8 @@ struct AncestorDetailView: View {
         VStack {
             Text(ancestor.name)
                 .padding()
-            OrdinanceProgressView(ordinancesCompleted: ancestor.ordinancesCompleted)
+            OrdinanceProgress(ordinancesCompleted: ancestor.ordinancesCompleted)
+//            Spacer()
         }
     }
 }

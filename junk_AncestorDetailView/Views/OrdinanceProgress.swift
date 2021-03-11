@@ -12,7 +12,7 @@ import SwiftUI
  
  ordinancesCompleted: [Ordiance] - A collection of completed ordiances.
  */
-struct OrdinanceProgressView: View {
+struct OrdinanceProgress: View {
     var ordinancesCompleted: [Ordinance]
     
     var body: some View {
@@ -28,19 +28,19 @@ struct OrdinanceProgressView: View {
         if (ordinance == .baptism) {
             CapsuleEnd()
                 .foregroundColor(.clear)
-                .frame(width: 50, height: 50, alignment: .center)
+                .frame(width: 48, height: 48, alignment: .center)
                 .overlay(CapsuleEnd().stroke(Color.blue, lineWidth: 2)
                             .overlay(Text(ordinance.rawValue)))
         } else if (ordinance == .sealingToSpouse) {
             CapsuleEnd()
                 .rotation(.degrees(180))
                 .foregroundColor(.clear)
-                .frame(width: 50, height: 50, alignment: .center)
+                .frame(width: 48, height: 48, alignment: .center)
                 .overlay(CapsuleEnd().rotation(.degrees(180)).stroke(Color.blue, lineWidth: 2)
                             .overlay(Text(ordinance.rawValue)))
         } else {
             Rectangle()
-                .strokeBorder(Color.blue, lineWidth: 2)
+//                .strokeBorder(Color.blue, lineWidth: 2)
                 .frame(width: 50, height: 50, alignment: .center)
                 .overlay(Text(ordinance.rawValue))
         }
@@ -67,6 +67,6 @@ struct OrdinanceProgressView: View {
 
 struct OrdinanceProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        OrdinanceProgressView(ordinancesCompleted: [.baptism, .confirmation])
+        OrdinanceProgress(ordinancesCompleted: [.baptism, .confirmation])
     }
 }
