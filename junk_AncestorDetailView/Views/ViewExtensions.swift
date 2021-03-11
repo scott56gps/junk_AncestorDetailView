@@ -18,9 +18,4 @@ extension View {
             elseTransform(self)
         }
     }
-    
-    /// Adds a border to this view with the specified width, edges and color
-    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
-        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
-    }
 }

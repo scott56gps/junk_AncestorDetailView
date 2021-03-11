@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-extension Shape {
+extension InsettableShape {
     /// Adds a stroked border to this view with the specified width, edges and color
     func strokeBorder(width: CGFloat, edges: [Edge], color: Color) -> some View {
-        overlay(EdgeBorder(width: width, edges: edges))
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color)).foregroundColor(.clear)
     }
 }

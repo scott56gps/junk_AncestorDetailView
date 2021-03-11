@@ -7,15 +7,23 @@
 
 import SwiftUI
 
-struct CapsuleEnd: Shape {
+struct CapsuleEnd: InsettableShape {
+    var insetAmount: CGFloat = 0
+    
     func path(in rect: CGRect) -> Path {
         Path { path in
-            path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2, startAngle: .degrees(270), endAngle: .degrees(90), clockwise: true)
-            path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+            path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: (rect.width / 2) - insetAmount, startAngle: .degrees(270), endAngle: .degrees(90), clockwise: true)
+            path.move(to: CGPoint(x: rect.midX, y: rect.minY + insetAmount))
+            path.addLine(to: CGPoint(x: rect.maxX - insetAmount, y: rect.minY + insetAmount))
+            path.addLine(to: CGPoint(x: rect.maxX - insetAmount, y: rect.maxY - insetAmount))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY - insetAmount))
         }
+    }
+    
+    func inset(by amount: CGFloat) -> some InsettableShape {
+        var capsuleEnd = self
+        capsuleEnd.insetAmount += amount
+        return capsuleEnd
     }
 }
 

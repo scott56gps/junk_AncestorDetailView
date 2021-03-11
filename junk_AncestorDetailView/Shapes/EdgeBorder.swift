@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct EdgeBorder: Shape, InsettableShape {
+struct EdgeBorder: InsettableShape {
     var width: CGFloat
     var edges: [Edge]
     var insetAmount: CGFloat = 0
@@ -17,21 +17,21 @@ struct EdgeBorder: Shape, InsettableShape {
                 Path { subPath in
                     var x: CGFloat {
                         switch edge {
-                        case .top, .bottom, .leading: return rect.minX
-                        case .trailing: return rect.maxX - width
+                        case .top, .bottom, .leading: return rect.minX + insetAmount
+                        case .trailing: return (rect.maxX - insetAmount) - width
                         }
                     }
                     
                     var y: CGFloat {
                         switch edge {
-                        case .top, .leading, .trailing: return rect.minY
-                        case .bottom: return rect.maxY - width
+                        case .top, .leading, .trailing: return rect.minY + insetAmount
+                        case .bottom: return (rect.maxY - insetAmount) - width
                         }
                     }
                     
                     var pathWidth: CGFloat {
                         switch edge {
-                        case .top, .bottom: return rect.width
+                        case .top, .bottom: return rect.width - insetAmount
                         case .leading, .trailing: return self.width
                         }
                     }
@@ -39,7 +39,7 @@ struct EdgeBorder: Shape, InsettableShape {
                     var height: CGFloat {
                         switch edge {
                         case .top, .bottom: return self.width
-                        case .leading, .trailing: return rect.height
+                        case .leading, .trailing: return rect.height - insetAmount
                         }
                     }
                     
@@ -57,5 +57,13 @@ struct EdgeBorder: Shape, InsettableShape {
         var border = self
         border.insetAmount += amount
         return border
+    }
+}
+
+struct EdgeBorder_Previews: PreviewProvider {
+    static var previews: some View {
+        EdgeBorder(width: 2, edges: [.leading])
+            .foregroundColor(.red)
+
     }
 }

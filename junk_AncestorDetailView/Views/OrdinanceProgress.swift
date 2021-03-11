@@ -25,26 +25,24 @@ struct OrdinanceProgress: View {
     
     @ViewBuilder
     func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
-        if (ordinance == .baptism) {
-            CapsuleEnd()
-                .foregroundColor(.clear)
-                .frame(width: 48, height: 48, alignment: .center)
-                .overlay(CapsuleEnd().stroke(Color.blue, lineWidth: 2)
-                            .overlay(Text(ordinance.rawValue)))
-        } else if (ordinance == .sealingToSpouse) {
-            CapsuleEnd()
-                .rotation(.degrees(180))
-                .foregroundColor(.clear)
-                .frame(width: 48, height: 48, alignment: .center)
-                .overlay(CapsuleEnd().rotation(.degrees(180)).stroke(Color.blue, lineWidth: 2)
-                            .overlay(Text(ordinance.rawValue)))
-        } else {
-            Rectangle()
-//                .strokeBorder(Color.blue, lineWidth: 2)
-                .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: .blue)
-                .foregroundColor(.clear)
-                .frame(width: 50, height: 50, alignment: .center)
-                .overlay(Text(ordinance.rawValue))
+        switch ordinance {
+        case .baptism: CapsuleEnd()
+            .strokeBorder(Color.blue, lineWidth: 2)
+            .frame(width: 50, height: 50, alignment: .center)
+            .overlay(Text(ordinance.rawValue))
+        case .confirmation: Rectangle()
+            .strokeBorder(width: 2, edges: [.top, .bottom], color: .blue)
+            .overlay(Text(ordinance.rawValue))
+            .frame(width: 50, height: 50, alignment: .center)
+        case .sealingToSpouse: CapsuleEnd()
+            .rotation(.degrees(180))
+            .strokeBorder(Color.blue, lineWidth: 2)
+            .overlay(Text(ordinance.rawValue))
+            .frame(width: 50, height: 50, alignment: .center)
+        default: Rectangle()
+            .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: .blue)
+            .overlay(Text(ordinance.rawValue))
+            .frame(width: 50, height: 50, alignment: .center)
         }
     }
     
