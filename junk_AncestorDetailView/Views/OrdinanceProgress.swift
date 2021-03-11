@@ -20,59 +20,44 @@ struct OrdinanceProgress: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(Ordinance.allCases, id: \.self) {ordinance in
-                createOrdinanceTile(ordinance)
+            ForEach(Ordinance.allCases, id: \.self) { ordinance in
+                tileForOrdinance(ordinance)
+                    .overlay(Text(ordinance.rawValue)
+                        .foregroundColor(textColor))
+                    .frame(width: 50, height: 50, alignment: .center)
             }
         }
     }
     
     @ViewBuilder
-    func createOrdinanceTile(_ ordinance: Ordinance) -> some View {
+    func tileForOrdinance(_ ordinance: Ordinance) -> some View {
         switch ordinance {
-        case .baptism: CapsuleEnd()
-            .strokeBorder(borderColor, lineWidth: 2)
-            .frame(width: 50, height: 50, alignment: .center)
-            .overlay(Text(ordinance.rawValue)
-                .foregroundColor(textColor))
-        case .confirmation: Rectangle()
-            .strokeBorder(width: 2, edges: [.top, .bottom], color: borderColor)
-            .overlay(Text(ordinance.rawValue)
-                .foregroundColor(textColor))
-            .frame(width: 50, height: 50, alignment: .center)
-        case .sealingToSpouse: CapsuleEnd()
-            .rotation(.degrees(180))
-            .strokeBorder(borderColor, lineWidth: 2)
-            .overlay(Text(ordinance.rawValue)
-                .foregroundColor(textColor))
-            .frame(width: 50, height: 50, alignment: .center)
-        default: Rectangle()
-            .strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: borderColor)
-            .overlay(Text(ordinance.rawValue).foregroundColor(textColor))
-            .frame(width: 50, height: 50, alignment: .center)
+        case .baptism: AnyView(CapsuleEnd()
+                                .ifElse(ordinancesCompleted.contains(ordinance), if:
+                                            { $0.fill(fillColor) }, else:
+                                                { $0.strokeBorder(borderColor, lineWidth: 2) }))
+            
+        case .confirmation: AnyView(Rectangle()
+                                        .ifElse(ordinancesCompleted.contains(ordinance), if:
+                                                    { $0.fill(fillColor) }, else:
+                                                        { $0.strokeBorder(width: 2, edges: [.top, .bottom], color: borderColor) }))
+            
+        case .sealingToSpouse: AnyView(CapsuleEnd()
+                                        .rotation(.degrees(180))
+                                        .ifElse(ordinancesCompleted.contains(ordinance), if:
+                                                    { $0.fill(fillColor) }, else:
+                                                        { $0.strokeBorder(borderColor, lineWidth: 2) }))
+            
+        default: AnyView(Rectangle()
+            .ifElse(ordinancesCompleted.contains(ordinance), if:
+                        { $0.fill(fillColor) }, else:
+                            { $0.strokeBorder(width: 2, edges: [.top, .bottom, .leading], color: borderColor) }))
         }
-    }
-    
-    func createFilledTile() -> some View {
-        return Rectangle()
-            .fill(Color.blue)
-            .frame(width: 25, height: 25, alignment: .center)
-    }
-    
-    func createEmptyTile() -> some View {
-        return Rectangle()
-            .strokeBorder(Color.blue, lineWidth: 1)
-            .frame(width: 25, height: 25, alignment: .center)
-    }
-    
-    func createFilledCapsule() -> some View {
-        return Capsule()
-            .fill(Color.blue)
-            .frame(width: 40, height: 25, alignment: .center)
     }
 }
 
 struct OrdinanceProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        OrdinanceProgress(ordinancesCompleted: [.baptism, .confirmation])
+        OrdinanceProgress(ordinancesCompleted: [.baptism, .confirmation], fillColor: .green)
     }
 }

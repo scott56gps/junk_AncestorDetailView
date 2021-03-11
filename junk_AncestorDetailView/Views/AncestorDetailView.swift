@@ -20,13 +20,12 @@ struct AncestorDetailView: View {
             Text(ancestor.name)
                 .padding()
             OrdinanceProgress(ordinancesCompleted: ancestor.ordinancesCompleted)
-//            Spacer()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AncestorDetailView(ancestor: Ancestor(name: "Evangelina De Luna", gender: .female, ordinancesCompleted: [.baptism, .confirmation]))
+        AncestorDetailView(ancestor: Ancestor(name: "Evangelina De Luna", gender: .female, ordinancesCompleted: [.baptism, .confirmation, .initiatory, .endowment, .sealingToParents, .sealingToSpouse]))
     }
 }

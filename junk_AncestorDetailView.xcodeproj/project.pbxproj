@@ -56,10 +56,10 @@
 		1338474A25C9478A0051FED9 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				13229E7B25FA041B004FD24E /* ShapeExtensions.swift */,
 				1338474B25C947A00051FED9 /* CapsuleEnd.swift */,
 				1338474E25C95F300051FED9 /* WindowedCapsule.swift */,
 				1367DE3D25F9EE7100E22A96 /* EdgeBorder.swift */,
-				13229E7B25FA041B004FD24E /* ShapeExtensions.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
